@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {SafeAreaView,StyleSheet,Text,View} from 'react-native';
+import {SafeAreaView,StyleSheet} from 'react-native';
 import Titulo from './componentes/Titulo'
 import Gasolina from './componentes/Gasolina'
 import Etanol from './componentes/Etanol'

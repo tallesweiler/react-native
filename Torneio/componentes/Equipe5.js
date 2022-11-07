@@ -61,9 +61,12 @@ export default function Equipe1() {
         if (at6) 
             res+=50
         res+=5*gap
+        
+        if (res!=0)
+            res+=(14-minutes)*60+(60-seconds)
 
         Alert.alert(
-            "Resultado", "Voce marcou " + res + " pontos!"
+            "Resultado", Globais.resultado5 + "\nVoce marcou " + res + " pontos!\n"
         )
     }
 
@@ -71,6 +74,8 @@ export default function Equipe1() {
         if (num===1) {
             setAt51v(!at51v)
             Globais.eat51v=!at51v
+            if (!at51v)
+                marcarTempo('Identificou a vítima (vermelho)')
             if(!at51v && at52v && at53v && at54v)
                 todosMarcadosVermelho(1)
             else 
@@ -79,6 +84,8 @@ export default function Equipe1() {
         else if (num===2) {
             setAt52v(!at52v)
             Globais.eat52v=!at52v
+            if (!at52v)
+                marcarTempo('Levou a vítima (vermelho)')
             if(at51v && !at52v && at53v && at54v)
                 todosMarcadosVermelho(1)
             else 
@@ -87,6 +94,8 @@ export default function Equipe1() {
         else if (num===3) {
             setAt53v(!at53v)
             Globais.eat53v=!at53v
+            if (!at53v)
+                marcarTempo('Deixou a vítima (vermelho)')
             if(at51v && at52v && !at53v && at54v)
                 todosMarcadosVermelho(1)
             else 
@@ -95,6 +104,8 @@ export default function Equipe1() {
         else if (num===4) {
             setAt54v(!at54v)
             Globais.eat54v=!at54v
+            if (!at54v)
+                marcarTempo('Retomou a linha (vermelho)')
             if(at51v && at52v && at53v && !at54v)
                 todosMarcadosVermelho(1)
             else 
@@ -135,6 +146,7 @@ export default function Equipe1() {
             Globais.eat52v=true
             Globais.eat53v=true
             Globais.eat54v=true
+            marcarTempo('Concluiu o resgate (vermelho)')
         }
     }
 
@@ -142,6 +154,8 @@ export default function Equipe1() {
         if (num===1) {
             setAt51a(!at51a)
             Globais.eat51a=!at51a
+            if (!at51a)
+                marcarTempo('Identificou a vítima (amarelo)')
             if(!at51a && at52a && at53a && at54a)
                 todosMarcadosAmarelo(1)
             else 
@@ -150,6 +164,8 @@ export default function Equipe1() {
         else if (num===2) {
             setAt52a(!at52a)
             Globais.eat52a=!at52a
+            if (!at52a)
+                marcarTempo('Levou a vítima (amarelo)')
             if(at51a && !at52a && at53a && at54a)
                 todosMarcadosAmarelo(1)
             else 
@@ -158,6 +174,8 @@ export default function Equipe1() {
         else if (num===3) {
             setAt53a(!at53a)
             Globais.eat53a=!at53a
+            if (!at53a)
+                marcarTempo('Deixou a vítima (amarelo)')
             if(at51a && at52a && !at53a && at54a)
                 todosMarcadosAmarelo(1)
             else 
@@ -166,6 +184,8 @@ export default function Equipe1() {
         else if (num===4) {
             setAt54a(!at54a)
             Globais.eat54a=!at54a
+            if (!at54a)
+                marcarTempo('Retomou a linha (amarelo)')
             if(at51a && at52a && at53a && !at54a)
                 todosMarcadosAmarelo(1)
             else 
@@ -206,6 +226,7 @@ export default function Equipe1() {
             Globais.eat52a=true
             Globais.eat53a=true
             Globais.eat54a=true
+            marcarTempo('Concluiu o resgate (amarelo)')
         }
     }
 
@@ -213,6 +234,8 @@ export default function Equipe1() {
         if (num===1) {
             setAt51l(!at51l)
             Globais.eat51l=!at51l
+            if (!at51l)
+                marcarTempo('Identificou a vítima (lilás)')
             if(!at51l && at52l && at53l && at54l)
                 todosMarcadosLilas(1)
             else 
@@ -221,6 +244,8 @@ export default function Equipe1() {
         else if (num===2) {
             setAt52l(!at52l)
             Globais.eat52l=!at52l
+            if (!at52l)
+                marcarTempo('Levou a vítima (lilás)')
             if(at51l && !at52l && at53l && at54l)
                 todosMarcadosLilas(1)
             else 
@@ -229,6 +254,8 @@ export default function Equipe1() {
         else if (num===3) {
             setAt53l(!at53l)
             Globais.eat53l=!at53l
+            if (!at53l)
+                marcarTempo('Deixou a vítima (lilás)')
             if(at51l && at52l && !at53l && at54l)
                 todosMarcadosLilas(1)
             else 
@@ -237,6 +264,8 @@ export default function Equipe1() {
         else if (num===4) {
             setAt54l(!at54l)
             Globais.eat54l=!at54l
+            if (!at54l)
+                marcarTempo('Retomou a linha (lilás)')
             if(at51l && at52l && at53l && !at54l)
                 todosMarcadosLilas(1)
             else 
@@ -277,12 +306,14 @@ export default function Equipe1() {
             Globais.eat52l=true
             Globais.eat53l=true
             Globais.eat54l=true
+            marcarTempo('Concluiu o resgate (lilás)')
         }
     }
 
     function aumentaGap() {
         setGap(gap+1)
         Globais.egap=Globais.egap+1
+        marcarTempo('Passou o gap')
     }
     function diminuiGap() {
         if (gap>0) {
@@ -295,23 +326,162 @@ export default function Equipe1() {
     function setarAt1() {
         setAt1(!at1)
         Globais.eat1=!at1
+        if (!at1)
+            marcarTempo('Passou o portal')
     }
     function setarAt2() {
         setAt2(!at2)
         Globais.eat2=!at2
+        if (!at2)
+            marcarTempo('Fez a volta completa')
     }
     function setarAt3() {
         setAt3(!at3)
         Globais.eat3=!at3
+        if (!at3)
+            marcarTempo('Desviou do obstáculo')
     }
     function setarAt6() {
         setAt6(!at6)
         Globais.eat6=!at6
+        if (!at6) {
+            marcarTempo('Finalizou a prova')
+            stopTimer()
+        }
+    }
+
+    const [seconds,setSeconds]=useState(Globais.seconds5)
+    const [minutes,setMinutes]=useState(Globais.minutes5)
+    const [customInterval,setCustomInterval]=useState(null);
+    const [isPaused,setIsPaused]=useState(true)
+  
+    function startTimer() {
+      if (customInterval!=null && !isPaused)
+        return
+      
+      setCustomInterval(
+        setInterval(()=>{
+          changeTime();
+        },995)
+      )
+  
+      setIsPaused(false)
+    }
+  
+    function stopTimer() {
+      if (customInterval) {
+        setIsPaused(true)
+        clearInterval(customInterval)
+      }
+      marcarTempo('Terminou a prova')
+    }
+  
+    function clear() {
+      stopTimer()
+      setSeconds(0)
+      Globais.seconds5=0
+      setMinutes(0)
+      Globais.minutes5=0
+      setCustomInterval(null)
+      setIsPaused(true)
+    }
+  
+    function changeTime() {
+      setSeconds((prevState)=>{
+        if (prevState+1==60) {
+          setMinutes((prevState)=>{
+            Globais.minutes5+=1
+            return prevState+1
+          })
+          Globais.seconds5=0
+          return 0
+        }
+        if (Globais.minutes5==15) {
+            stopTimer()
+            return 0
+        }
+        Globais.seconds5+=1
+        return prevState+1
+      })
+    }
+
+    function marcarTempo(atv) {
+        if (minutes<10 && seconds>9)
+            Globais.resultado5+=atv+' aos 0'+minutes+':'+seconds+'\n'
+        else if (minutes>9 && seconds<10)
+            Globais.resultado5+=atv+' aos '+minutes+':0'+seconds+'\n'
+        else
+            Globais.resultado5+=atv+' aos 0'+minutes+':0'+seconds+'\n'
+    }    
+
+    function limparResultado() {
+        setAt1()
+        setAt2()
+        setAt3()
+        setAt6()
+        setAt51v()
+        setAt52v()
+        setAt53v()
+        setAt54v()
+        setAt5v()
+        setAt51a()
+        setAt52a()
+        setAt53a()
+        setAt54a()
+        setAt5a()
+        setAt51l()
+        setAt52l()
+        setAt53l()
+        setAt54l()
+        setAt5l()
+        setGap(0)
+        Globais.eat1=
+        Globais.eat2=
+        Globais.eat3=
+        Globais.eat6=
+        Globais.eat51v=
+        Globais.eat52v=
+        Globais.eat53v=
+        Globais.eat54v=
+        Globais.eat5v=
+        Globais.eat51a=
+        Globais.eat52a=
+        Globais.eat53a=
+        Globais.eat54a=
+        Globais.eat5a=
+        Globais.eat51l=
+        Globais.eat52l=
+        Globais.eat53l=
+        Globais.eat54l=
+        Globais.eat5l=
+        Globais.egap=0
+        clear()
+        Globais.resultado5=''
     }
 
     return(
         <SafeAreaView>
             <ScrollView>
+                <View style={styles.container}>
+                    <Text style={styles.titulo}>{minutes<10 ? '0'+minutes : minutes}:{seconds<10 ? '0'+seconds : seconds}</Text>
+                    <View style={styles.botaoContainer}>
+                        {
+                            isPaused ? 
+                            <Button
+                                title="Iniciar"
+                                onPress={startTimer}
+                            /> :
+                            <Button
+                                title="Parar"
+                                onPress={stopTimer}
+                            />
+                        }
+                        <Button
+                        title="Zerar"
+                        onPress={clear}
+                        />
+                    </View>
+                </View>
                 <CheckBox
                     title="Passar o portal - 10 pontos"
                     checked={at1}
@@ -458,7 +628,7 @@ export default function Equipe1() {
                     checkedIcon='dot-circle-o'
                     uncheckedIcon='circle-o'
                 />
-                <View style={styles.geap}>
+                <View style={styles.gaap}>
                     <Text style={styles.texto}>  Gap - 5 pontos</Text>
                     <Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text>
                     <Button
@@ -471,11 +641,17 @@ export default function Equipe1() {
                         onPress={()=>aumentaGap()}
                     />
                 </View>
-                <View style={styles.botao}>
+                <View style={styles.container}>
                     <Button
                         title="Resultado"
                         onPress={()=>click()}
                     />
+                    <View style={{marginTop:50}}>
+                        <Button
+                            title="Limpar resultado"
+                            onPress={()=>limparResultado()}
+                        />
+                    </View>
                 </View>
             </ScrollView>
         </SafeAreaView>
@@ -487,7 +663,7 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         justifyContent:'center',
         marginTop:20,
-        marginBottom:150,
+        marginBottom:10,
     },
     text: {
         fontSize:20,
@@ -499,7 +675,7 @@ const styles = StyleSheet.create({
         color:'black',
         marginTop:7,
     },
-    geap: {
+    gaap: {
         flexDirection:'row',
         padding:5,
         marginTop:5,
@@ -508,6 +684,23 @@ const styles = StyleSheet.create({
         backgroundColor:'#fafafa',
         justifyContent:'space-between',
         borderRadius:3,
+    },
+    container: {
+        justifyContent:'center',
+        alignItems:'center',
+        backgroundColor:"#fafafa",
+        marginBottom:10,
+    },
+    titulo: {
+        fontSize:30,
+        fontWeight:'bold',
+        color:'black',
+    },
+    botaoContainer: {
+        width:"50%",
+        flexDirection:'row',
+        justifyContent:'space-around',
+        marginTop:10,
     },
 });
     

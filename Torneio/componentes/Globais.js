@@ -103,6 +103,23 @@ class Globais {
     static eat54l=false
     static eat6=false
     static egap=0
+
+    static seconds1=0
+    static minutes1=0
+    static seconds2=0
+    static minutes2=0
+    static seconds3=0
+    static minutes3=0
+    static seconds4=0
+    static minutes4=0
+    static seconds5=0
+    static minutes5=0
+
+    static resultado1=''
+    static resultado2=''
+    static resultado3=''
+    static resultado4=''
+    static resultado5=''
 }
 
 export default Globais

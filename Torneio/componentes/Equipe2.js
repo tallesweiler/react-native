@@ -61,9 +61,12 @@ export default function Equipe1() {
         if (at6) 
             res+=50
         res+=5*gap
+        
+        if (res!=0)
+            res+=(14-minutes)*60+(60-seconds)
 
         Alert.alert(
-            "Resultado", "Voce marcou " + res + " pontos!"
+            "Resultado", Globais.resultado2 + "\nVoce marcou " + res + " pontos!\n"
         )
     }
 
@@ -71,6 +74,8 @@ export default function Equipe1() {
         if (num===1) {
             setAt51v(!at51v)
             Globais.bat51v=!at51v
+            if (!at51v)
+                marcarTempo('Identificou a vítima (vermelho)')
             if(!at51v && at52v && at53v && at54v)
                 todosMarcadosVermelho(1)
             else 
@@ -79,6 +84,8 @@ export default function Equipe1() {
         else if (num===2) {
             setAt52v(!at52v)
             Globais.bat52v=!at52v
+            if (!at52v)
+                marcarTempo('Levou a vítima (vermelho)')
             if(at51v && !at52v && at53v && at54v)
                 todosMarcadosVermelho(1)
             else 
@@ -87,6 +94,8 @@ export default function Equipe1() {
         else if (num===3) {
             setAt53v(!at53v)
             Globais.bat53v=!at53v
+            if (!at53v)
+                marcarTempo('Deixou a vítima (vermelho)')
             if(at51v && at52v && !at53v && at54v)
                 todosMarcadosVermelho(1)
             else 
@@ -95,6 +104,8 @@ export default function Equipe1() {
         else if (num===4) {
             setAt54v(!at54v)
             Globais.bat54v=!at54v
+            if (!at54v)
+                marcarTempo('Retomou a linha (vermelho)')
             if(at51v && at52v && at53v && !at54v)
                 todosMarcadosVermelho(1)
             else 
@@ -135,6 +146,7 @@ export default function Equipe1() {
             Globais.bat52v=true
             Globais.bat53v=true
             Globais.bat54v=true
+            marcarTempo('Concluiu o resgate (vermelho)')
         }
     }
 
@@ -142,6 +154,8 @@ export default function Equipe1() {
         if (num===1) {
             setAt51a(!at51a)
             Globais.bat51a=!at51a
+            if (!at51a)
+                marcarTempo('Identificou a vítima (amarelo)')
             if(!at51a && at52a && at53a && at54a)
                 todosMarcadosAmarelo(1)
             else 
@@ -150,6 +164,8 @@ export default function Equipe1() {
         else if (num===2) {
             setAt52a(!at52a)
             Globais.bat52a=!at52a
+            if (!at52a)
+                marcarTempo('Levou a vítima (amarelo)')
             if(at51a && !at52a && at53a && at54a)
                 todosMarcadosAmarelo(1)
             else 
@@ -158,6 +174,8 @@ export default function Equipe1() {
         else if (num===3) {
             setAt53a(!at53a)
             Globais.bat53a=!at53a
+            if (!at53a)
+                marcarTempo('Deixou a vítima (amarelo)')
             if(at51a && at52a && !at53a && at54a)
                 todosMarcadosAmarelo(1)
             else 
@@ -166,6 +184,8 @@ export default function Equipe1() {
         else if (num===4) {
             setAt54a(!at54a)
             Globais.bat54a=!at54a
+            if (!at54a)
+                marcarTempo('Retomou a linha (amarelo)')
             if(at51a && at52a && at53a && !at54a)
                 todosMarcadosAmarelo(1)
             else 
@@ -206,6 +226,7 @@ export default function Equipe1() {
             Globais.bat52a=true
             Globais.bat53a=true
             Globais.bat54a=true
+            marcarTempo('Concluiu o resgate (amarelo)')
         }
     }
 
@@ -213,6 +234,8 @@ export default function Equipe1() {
         if (num===1) {
             setAt51l(!at51l)
             Globais.bat51l=!at51l
+            if (!at51l)
+                marcarTempo('Identificou a vítima (lilás)')
             if(!at51l && at52l && at53l && at54l)
                 todosMarcadosLilas(1)
             else 
@@ -221,6 +244,8 @@ export default function Equipe1() {
         else if (num===2) {
             setAt52l(!at52l)
             Globais.bat52l=!at52l
+            if (!at52l)
+                marcarTempo('Levou a vítima (lilás)')
             if(at51l && !at52l && at53l && at54l)
                 todosMarcadosLilas(1)
             else 
@@ -229,6 +254,8 @@ export default function Equipe1() {
         else if (num===3) {
             setAt53l(!at53l)
             Globais.bat53l=!at53l
+            if (!at53l)
+                marcarTempo('Deixou a vítima (lilás)')
             if(at51l && at52l && !at53l && at54l)
                 todosMarcadosLilas(1)
             else 
@@ -237,6 +264,8 @@ export default function Equipe1() {
         else if (num===4) {
             setAt54l(!at54l)
             Globais.bat54l=!at54l
+            if (!at54l)
+                marcarTempo('Retomou a linha (lilás)')
             if(at51l && at52l && at53l && !at54l)
                 todosMarcadosLilas(1)
             else 
@@ -277,12 +306,14 @@ export default function Equipe1() {
             Globais.bat52l=true
             Globais.bat53l=true
             Globais.bat54l=true
+            marcarTempo('Concluiu o resgate (lilás)')
         }
     }
 
     function aumentaGap() {
         setGap(gap+1)
         Globais.bgap=Globais.bgap+1
+        marcarTempo('Passou o gap')
     }
     function diminuiGap() {
         if (gap>0) {
@@ -292,30 +323,169 @@ export default function Equipe1() {
             
     }
 
-    function setaAt1() {
+    function setarAt1() {
         setAt1(!at1)
         Globais.bat1=!at1
+        if (!at1)
+            marcarTempo('Passou o portal')
     }
-    function setaAt2() {
+    function setarAt2() {
         setAt2(!at2)
         Globais.bat2=!at2
+        if (!at2)
+            marcarTempo('Fez a volta completa')
     }
-    function setaAt3() {
+    function setarAt3() {
         setAt3(!at3)
         Globais.bat3=!at3
+        if (!at3)
+            marcarTempo('Desviou do obstáculo')
     }
-    function setaAt6() {
+    function setarAt6() {
         setAt6(!at6)
         Globais.bat6=!at6
+        if (!at6) {
+            marcarTempo('Finalizou a prova')
+            stopTimer()
+        }
+    }
+
+    const [seconds,setSeconds]=useState(Globais.seconds2)
+    const [minutes,setMinutes]=useState(Globais.minutes2)
+    const [customInterval,setCustomInterval]=useState(null);
+    const [isPaused,setIsPaused]=useState(true)
+  
+    function startTimer() {
+      if (customInterval!=null && !isPaused)
+        return
+      
+      setCustomInterval(
+        setInterval(()=>{
+          changeTime();
+        },995)
+      )
+  
+      setIsPaused(false)
+    }
+  
+    function stopTimer() {
+      if (customInterval) {
+        setIsPaused(true)
+        clearInterval(customInterval)
+      }
+      marcarTempo('Terminou a prova')
+    }
+  
+    function clear() {
+      stopTimer()
+      setSeconds(0)
+      Globais.seconds2=0
+      setMinutes(0)
+      Globais.minutes2=0
+      setCustomInterval(null)
+      setIsPaused(true)
+    }
+  
+    function changeTime() {
+      setSeconds((prevState)=>{
+        if (prevState+1==60) {
+          setMinutes((prevState)=>{
+            Globais.minutes2+=1
+            return prevState+1
+          })
+          Globais.seconds2=0
+          return 0
+        }
+        if (Globais.minutes2==15) {
+            stopTimer()
+            return 0
+        }
+        Globais.seconds2+=1
+        return prevState+1
+      })
+    }
+
+    function marcarTempo(atv) {
+        if (minutes<10 && seconds>9)
+            Globais.resultado2+=atv+' aos 0'+minutes+':'+seconds+'\n'
+        else if (minutes>9 && seconds<10)
+            Globais.resultado2+=atv+' aos '+minutes+':0'+seconds+'\n'
+        else
+            Globais.resultado2+=atv+' aos 0'+minutes+':0'+seconds+'\n'
+    }    
+
+    function limparResultado() {
+        setAt1()
+        setAt2()
+        setAt3()
+        setAt6()
+        setAt51v()
+        setAt52v()
+        setAt53v()
+        setAt54v()
+        setAt5v()
+        setAt51a()
+        setAt52a()
+        setAt53a()
+        setAt54a()
+        setAt5a()
+        setAt51l()
+        setAt52l()
+        setAt53l()
+        setAt54l()
+        setAt5l()
+        setGap(0)
+        Globais.bat1=
+        Globais.bat2=
+        Globais.bat3=
+        Globais.bat6=
+        Globais.bat51v=
+        Globais.bat52v=
+        Globais.bat53v=
+        Globais.bat54v=
+        Globais.bat5v=
+        Globais.bat51a=
+        Globais.bat52a=
+        Globais.bat53a=
+        Globais.bat54a=
+        Globais.bat5a=
+        Globais.bat51l=
+        Globais.bat52l=
+        Globais.bat53l=
+        Globais.bat54l=
+        Globais.bat5l=
+        Globais.bgap=0
+        clear()
+        Globais.resultado2=''
     }
 
     return(
         <SafeAreaView>
             <ScrollView>
+                <View style={styles.container}>
+                    <Text style={styles.titulo}>{minutes<10 ? '0'+minutes : minutes}:{seconds<10 ? '0'+seconds : seconds}</Text>
+                    <View style={styles.botaoContainer}>
+                        {
+                            isPaused ? 
+                            <Button
+                                title="Iniciar"
+                                onPress={startTimer}
+                            /> :
+                            <Button
+                                title="Parar"
+                                onPress={stopTimer}
+                            />
+                        }
+                        <Button
+                        title="Zerar"
+                        onPress={clear}
+                        />
+                    </View>
+                </View>
                 <CheckBox
                     title="Passar o portal - 10 pontos"
                     checked={at1}
-                    onPress={()=>setaAt1()}
+                    onPress={()=>setarAt1()}
                     checkedColor="#1F7A01"
                     checkedIcon='dot-circle-o'
                     uncheckedIcon='circle-o'
@@ -323,7 +493,7 @@ export default function Equipe1() {
                 <CheckBox
                     title="Volta Completa - 20 pontos"
                     checked={at2}
-                    onPress={()=>setaAt2()}
+                    onPress={()=>setarAt2()}
                     checkedColor="#1F7A01"
                     checkedIcon='dot-circle-o'
                     uncheckedIcon='circle-o'
@@ -331,7 +501,7 @@ export default function Equipe1() {
                 <CheckBox
                     title="Desvio do obstáculo - 30 pontos"
                     checked={at3}
-                    onPress={()=>setaAt3()}
+                    onPress={()=>setarAt3()}
                     checkedColor="#1F7A01"
                     checkedIcon='dot-circle-o'
                     uncheckedIcon='circle-o'
@@ -453,7 +623,7 @@ export default function Equipe1() {
                 <CheckBox
                     title="Finalizar a prova - 50 pontos"
                     checked={at6}
-                    onPress={()=>setaAt6()}
+                    onPress={()=>setarAt6()}
                     checkedColor="#1F7A01"
                     checkedIcon='dot-circle-o'
                     uncheckedIcon='circle-o'
@@ -471,11 +641,17 @@ export default function Equipe1() {
                         onPress={()=>aumentaGap()}
                     />
                 </View>
-                <View style={styles.botao}>
+                <View style={styles.container}>
                     <Button
                         title="Resultado"
                         onPress={()=>click()}
                     />
+                    <View style={{marginTop:50}}>
+                        <Button
+                            title="Limpar resultado"
+                            onPress={()=>limparResultado()}
+                        />
+                    </View>
                 </View>
             </ScrollView>
         </SafeAreaView>
@@ -487,7 +663,7 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         justifyContent:'center',
         marginTop:20,
-        marginBottom:150,
+        marginBottom:10,
     },
     text: {
         fontSize:20,
@@ -508,6 +684,23 @@ const styles = StyleSheet.create({
         backgroundColor:'#fafafa',
         justifyContent:'space-between',
         borderRadius:3,
+    },
+    container: {
+        justifyContent:'center',
+        alignItems:'center',
+        backgroundColor:"#fafafa",
+        marginBottom:10,
+    },
+    titulo: {
+        fontSize:30,
+        fontWeight:'bold',
+        color:'black',
+    },
+    botaoContainer: {
+        width:"50%",
+        flexDirection:'row',
+        justifyContent:'space-around',
+        marginTop:10,
     },
 });
     

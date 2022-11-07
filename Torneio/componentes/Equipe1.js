@@ -62,8 +62,11 @@ export default function Equipe1() {
             res+=50
         res+=5*gap
 
+        if (res!=0)
+            res+=(14-minutes)*60+(60-seconds)
+
         Alert.alert(
-            "Resultado", "Voce marcou " + res + " pontos!"
+            "Resultado", Globais.resultado1 + "\nVoce marcou " + res + " pontos!\n"
         )
     }
 
@@ -71,6 +74,8 @@ export default function Equipe1() {
         if (num===1) {
             setAt51v(!at51v)
             Globais.aat51v=!at51v
+            if (!at51v)
+                marcarTempo('Identificou a vítima (vermelho)')
             if(!at51v && at52v && at53v && at54v)
                 todosMarcadosVermelho(1)
             else 
@@ -79,6 +84,8 @@ export default function Equipe1() {
         else if (num===2) {
             setAt52v(!at52v)
             Globais.aat52v=!at52v
+            if (!at52v)
+                marcarTempo('Levou a vítima (vermelho)')
             if(at51v && !at52v && at53v && at54v)
                 todosMarcadosVermelho(1)
             else 
@@ -87,6 +94,8 @@ export default function Equipe1() {
         else if (num===3) {
             setAt53v(!at53v)
             Globais.aat53v=!at53v
+            if (!at53v)
+                marcarTempo('Deixou a vítima (vermelho)')
             if(at51v && at52v && !at53v && at54v)
                 todosMarcadosVermelho(1)
             else 
@@ -95,6 +104,8 @@ export default function Equipe1() {
         else if (num===4) {
             setAt54v(!at54v)
             Globais.aat54v=!at54v
+            if (!at54v)
+                marcarTempo('Retomou a linha (vermelho)')
             if(at51v && at52v && at53v && !at54v)
                 todosMarcadosVermelho(1)
             else 
@@ -135,6 +146,7 @@ export default function Equipe1() {
             Globais.aat52v=true
             Globais.aat53v=true
             Globais.aat54v=true
+            marcarTempo('Concluiu o resgate (vermelho)')
         }
     }
 
@@ -142,6 +154,8 @@ export default function Equipe1() {
         if (num===1) {
             setAt51a(!at51a)
             Globais.aat51a=!at51a
+            if (!at51a)
+                marcarTempo('Identificou a vítima (amarelo)')
             if(!at51a && at52a && at53a && at54a)
                 todosMarcadosAmarelo(1)
             else 
@@ -150,6 +164,8 @@ export default function Equipe1() {
         else if (num===2) {
             setAt52a(!at52a)
             Globais.aat52a=!at52a
+            if (!at52a)
+                marcarTempo('Levou a vítima (amarelo)')
             if(at51a && !at52a && at53a && at54a)
                 todosMarcadosAmarelo(1)
             else 
@@ -158,6 +174,8 @@ export default function Equipe1() {
         else if (num===3) {
             setAt53a(!at53a)
             Globais.aat53a=!at53a
+            if (!at53a)
+                marcarTempo('Deixou a vítima (amarelo)')
             if(at51a && at52a && !at53a && at54a)
                 todosMarcadosAmarelo(1)
             else 
@@ -166,6 +184,8 @@ export default function Equipe1() {
         else if (num===4) {
             setAt54a(!at54a)
             Globais.aat54a=!at54a
+            if (!at54a)
+                marcarTempo('Retomou a linha (amarelo)')
             if(at51a && at52a && at53a && !at54a)
                 todosMarcadosAmarelo(1)
             else 
@@ -206,6 +226,7 @@ export default function Equipe1() {
             Globais.aat52a=true
             Globais.aat53a=true
             Globais.aat54a=true
+            marcarTempo('Concluiu o resgate (amarelo)')
         }
     }
 
@@ -213,6 +234,8 @@ export default function Equipe1() {
         if (num===1) {
             setAt51l(!at51l)
             Globais.aat51l=!at51l
+            if (!at51l)
+                marcarTempo('Identificou a vítima (lilás)')
             if(!at51l && at52l && at53l && at54l)
                 todosMarcadosLilas(1)
             else 
@@ -221,6 +244,8 @@ export default function Equipe1() {
         else if (num===2) {
             setAt52l(!at52l)
             Globais.aat52l=!at52l
+            if (!at52l)
+                marcarTempo('Levou a vítima (lilás)')
             if(at51l && !at52l && at53l && at54l)
                 todosMarcadosLilas(1)
             else 
@@ -229,6 +254,8 @@ export default function Equipe1() {
         else if (num===3) {
             setAt53l(!at53l)
             Globais.aat53l=!at53l
+            if (!at53l)
+                marcarTempo('Deixou a vítima (lilás)')
             if(at51l && at52l && !at53l && at54l)
                 todosMarcadosLilas(1)
             else 
@@ -237,6 +264,8 @@ export default function Equipe1() {
         else if (num===4) {
             setAt54l(!at54l)
             Globais.aat54l=!at54l
+            if (!at54l)
+                marcarTempo('Retomou a linha (lilás)')
             if(at51l && at52l && at53l && !at54l)
                 todosMarcadosLilas(1)
             else 
@@ -277,12 +306,14 @@ export default function Equipe1() {
             Globais.aat52l=true
             Globais.aat53l=true
             Globais.aat54l=true
+            marcarTempo('Concluiu o resgate (lilás)')
         }
     }
 
     function aumentaGap() {
         setGap(gap+1)
         Globais.agap=Globais.agap+1
+        marcarTempo('Passou o gap')
     }
     function diminuiGap() {
         if (gap>0) {
@@ -295,23 +326,163 @@ export default function Equipe1() {
     function setarAt1() {
         setAt1(!at1)
         Globais.aat1=!at1
+        if (!at1)
+            marcarTempo('Passou o portal')
     }
     function setarAt2() {
         setAt2(!at2)
         Globais.aat2=!at2
+        if (!at2)
+            marcarTempo('Fez a volta completa')
     }
     function setarAt3() {
         setAt3(!at3)
         Globais.aat3=!at3
+        if (!at3)
+            marcarTempo('Desviou do obstáculo')
     }
     function setarAt6() {
         setAt6(!at6)
         Globais.aat6=!at6
+        if (!at6) {
+            marcarTempo('Finalizou a prova')
+            stopTimer()
+        }
+            
+    }
+
+    const [seconds,setSeconds]=useState(Globais.seconds1)
+    const [minutes,setMinutes]=useState(Globais.minutes1)
+    const [customInterval,setCustomInterval]=useState(null);
+    const [isPaused,setIsPaused]=useState(true)
+  
+    function startTimer() {
+      if (customInterval!=null && !isPaused)
+        return
+      
+      setCustomInterval(
+        setInterval(()=>{
+          changeTime();
+        },995)
+      )
+  
+      setIsPaused(false)
+    }
+  
+    function stopTimer() {
+      if (customInterval) {
+        setIsPaused(true)
+        clearInterval(customInterval)
+      }
+      marcarTempo('Terminou a prova')
+    }
+  
+    function clear() {
+      stopTimer()
+      setSeconds(0)
+      Globais.seconds1=0
+      setMinutes(0)
+      Globais.minutes1=0
+      setCustomInterval(null)
+      setIsPaused(true)
+    }
+  
+    function changeTime() {
+      setSeconds((prevState)=>{
+        if (prevState+1==60) {
+          setMinutes((prevState)=>{
+            Globais.minutes1+=1
+            return prevState+1
+          })
+          Globais.seconds1=0
+          return 0
+        }
+        if (Globais.minutes1==15) {
+            stopTimer()
+            return 0
+        }
+        Globais.seconds1+=1
+        return prevState+1
+      })
+    }
+
+    function marcarTempo(atv) {
+        if (minutes<10 && seconds>9)
+            Globais.resultado1+=atv+' aos 0'+minutes+':'+seconds+'\n'
+        else if (minutes>9 && seconds<10)
+            Globais.resultado1+=atv+' aos '+minutes+':0'+seconds+'\n'
+        else
+            Globais.resultado1+=atv+' aos 0'+minutes+':0'+seconds+'\n'
+    }    
+
+    function limparResultado() {
+        setAt1()
+        setAt2()
+        setAt3()
+        setAt6()
+        setAt51v()
+        setAt52v()
+        setAt53v()
+        setAt54v()
+        setAt5v()
+        setAt51a()
+        setAt52a()
+        setAt53a()
+        setAt54a()
+        setAt5a()
+        setAt51l()
+        setAt52l()
+        setAt53l()
+        setAt54l()
+        setAt5l()
+        setGap(0)
+        Globais.aat1=
+        Globais.aat2=
+        Globais.aat3=
+        Globais.aat6=
+        Globais.aat51v=
+        Globais.aat52v=
+        Globais.aat53v=
+        Globais.aat54v=
+        Globais.aat5v=
+        Globais.aat51a=
+        Globais.aat52a=
+        Globais.aat53a=
+        Globais.aat54a=
+        Globais.aat5a=
+        Globais.aat51l=
+        Globais.aat52l=
+        Globais.aat53l=
+        Globais.aat54l=
+        Globais.aat5l=
+        Globais.agap=0
+        clear()
+        Globais.resultado1=''
     }
 
     return(
         <SafeAreaView>
             <ScrollView>
+                <View style={styles.container}>
+                    <Text style={styles.titulo}>{minutes<10 ? '0'+minutes : minutes}:{seconds<10 ? '0'+seconds : seconds}</Text>
+                    <View style={styles.botaoContainer}>
+                        {
+                            isPaused ? 
+                            <Button
+                                title="Iniciar"
+                                onPress={startTimer}
+                            /> :
+                            <Button
+                                title="Parar"
+                                onPress={stopTimer}
+                            />
+                        }
+                        <Button
+                        title="Zerar"
+                        onPress={clear}
+                        />
+                    </View>
+                </View>
                 <CheckBox
                     title="Passar o portal - 10 pontos"
                     checked={at1}
@@ -471,11 +642,17 @@ export default function Equipe1() {
                         onPress={()=>aumentaGap()}
                     />
                 </View>
-                <View style={styles.botao}>
+                <View style={styles.container}>
                     <Button
                         title="Resultado"
                         onPress={()=>click()}
                     />
+                    <View style={{marginTop:50}}>
+                        <Button
+                            title="Limpar resultado"
+                            onPress={()=>limparResultado()}
+                        />
+                    </View>
                 </View>
             </ScrollView>
         </SafeAreaView>
@@ -487,7 +664,7 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         justifyContent:'center',
         marginTop:20,
-        marginBottom:150,
+        marginBottom:10,
     },
     text: {
         fontSize:20,
@@ -508,6 +685,23 @@ const styles = StyleSheet.create({
         backgroundColor:'#fafafa',
         justifyContent:'space-between',
         borderRadius:3,
+    },
+    container: {
+        justifyContent:'center',
+        alignItems:'center',
+        backgroundColor:"#fafafa",
+        marginBottom:10,
+    },
+    titulo: {
+        fontSize:30,
+        fontWeight:'bold',
+        color:'black',
+    },
+    botaoContainer: {
+        width:"50%",
+        flexDirection:'row',
+        justifyContent:'space-around',
+        marginTop:10,
     },
 });
     

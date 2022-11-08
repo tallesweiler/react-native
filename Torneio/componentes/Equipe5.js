@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Alert, SafeAreaView,StyleSheet,Text,View,ScrollView} from 'react-native';
+import {Alert, SafeAreaView,StyleSheet,Text,View,ScrollView,TextInput} from 'react-native';
 import { Button, CheckBox } from 'react-native-elements';
 import Globais from './Globais'
 
@@ -29,41 +29,45 @@ export default function Equipe1() {
         let res=0
         
         if (at1)
-            res+=10
+            res+=100
         if (at2)
-            res+=20
+            res+=200
         if (at3) 
-            res+=30
+            res+=300
         if (at51v)
-            res+=10
+            res+=100
         if (at52v) 
-            res+=10
+            res+=100
         if (at53v)
-            res+=10
+            res+=100
         if (at54v)
-            res+=10
+            res+=100
+        if (at5v)
+            res+=400
         if (at51a)
-            res+=10
+            res+=100
         if (at52a) 
-            res+=10
+            res+=100
         if (at53a)
-            res+=10
+            res+=100
         if (at54a)
-            res+=10
+            res+=100
+        if (at5a)
+            res+=400
         if (at51l)
-            res+=10
+            res+=100
         if (at52l) 
-            res+=10
+            res+=100
         if (at53l)
-            res+=10
+            res+=100
         if (at54l)
-            res+=10
+            res+=100
+        if (at5l)
+            res+=400
         if (at6) 
-            res+=50
-        res+=5*gap
-        
-        if (res!=0)
-            res+=(14-minutes)*60+(60-seconds)
+            res+=500
+        res+=50*gap
+        res+=(14-minutes)*60+(60-seconds)
 
         Alert.alert(
             "Resultado", Globais.resultado5 + "\nVoce marcou " + res + " pontos!\n"
@@ -362,7 +366,7 @@ export default function Equipe1() {
       setCustomInterval(
         setInterval(()=>{
           changeTime();
-        },995)
+        },1000)
       )
   
       setIsPaused(false)
@@ -483,7 +487,7 @@ export default function Equipe1() {
                     </View>
                 </View>
                 <CheckBox
-                    title="Passar o portal - 10 pontos"
+                    title="Passar o portal - 100 pontos"
                     checked={at1}
                     onPress={()=>setarAt1()}
                     checkedColor="#1F7A01"
@@ -491,7 +495,7 @@ export default function Equipe1() {
                     uncheckedIcon='circle-o'
                 />
                 <CheckBox
-                    title="Volta Completa - 20 pontos"
+                    title="Volta Completa - 200 pontos"
                     checked={at2}
                     onPress={()=>setarAt2()}
                     checkedColor="#1F7A01"
@@ -499,7 +503,7 @@ export default function Equipe1() {
                     uncheckedIcon='circle-o'
                 />
                 <CheckBox
-                    title="Desvio do obstáculo - 30 pontos"
+                    title="Desvio do obstáculo - 300 pontos"
                     checked={at3}
                     onPress={()=>setarAt3()}
                     checkedColor="#1F7A01"
@@ -507,7 +511,7 @@ export default function Equipe1() {
                     uncheckedIcon='circle-o'
                 />
                 <CheckBox
-                    title="Resgate Vermelho - 40 pontos"
+                    title="Resgate Vermelho - 800 pontos"
                     checked={at5v}
                     onPress={()=>{marcaTodosVermelho()}}
                     checkedColor="#F31009"
@@ -518,25 +522,25 @@ export default function Equipe1() {
                 !at5v ? (
                     <View>
                         <CheckBox
-                            title="     • Identificar a vítima - 10 pontos"
+                            title="     • Identificar a vítima - 100 pontos"
                             checked={at51v}
                             onPress={()=>setResgateVermelho(1)}
                             checkedColor="#F31009"
                         />
                         <CheckBox
-                            title="     • Levar a vítima - 10 pontos"
+                            title="     • Levar a vítima - 100 pontos"
                             checked={at52v}
                             onPress={()=>setResgateVermelho(2)}
                             checkedColor="#F31009"
                         />
                         <CheckBox
-                            title="     • Deixar a vítima - 10 pontos"
+                            title="     • Deixar a vítima - 100 pontos"
                             checked={at53v}
                             onPress={()=>setResgateVermelho(3)}
                             checkedColor="#F31009"
                         />
                         <CheckBox
-                            title="     • Retomar a linha - 10 pontos"
+                            title="     • Retomar a linha - 100 pontos"
                             checked={at54v}
                             onPress={()=>setResgateVermelho(4)}
                             checkedColor="#F31009"
@@ -545,7 +549,7 @@ export default function Equipe1() {
                     ) : null
                 }
                 <CheckBox
-                    title="Resgate Amarelo - 40 pontos"
+                    title="Resgate Amarelo - 800 pontos"
                     checked={at5a}
                     onPress={()=>{marcaTodosAmarelo()}}
                     checkedColor="#F3EC09"
@@ -556,25 +560,25 @@ export default function Equipe1() {
                 !at5a ? (
                     <View>
                         <CheckBox
-                            title="     • Identificar a vítima - 10 pontos"
+                            title="     • Identificar a vítima - 100 pontos"
                             checked={at51a}
                             onPress={()=>setResgateAmarelo(1)}
                             checkedColor="#F3EC09"
                         />
                         <CheckBox
-                            title="     • Levar a vítima - 10 pontos"
+                            title="     • Levar a vítima - 100 pontos"
                             checked={at52a}
                             onPress={()=>setResgateAmarelo(2)}
                             checkedColor="#F3EC09"
                         />
                         <CheckBox
-                            title="     • Deixar a vítima - 10 pontos"
+                            title="     • Deixar a vítima - 100 pontos"
                             checked={at53a}
                             onPress={()=>setResgateAmarelo(3)}
                             checkedColor="#F3EC09"
                         />
                         <CheckBox
-                            title="     • Retomar a linha - 10 pontos"
+                            title="     • Retomar a linha - 100 pontos"
                             checked={at54a}
                             onPress={()=>setResgateAmarelo(4)}
                             checkedColor="#F3EC09"
@@ -583,7 +587,7 @@ export default function Equipe1() {
                     ) : null
                 }
                 <CheckBox
-                    title="Resgate Lilás - 40 pontos"
+                    title="Resgate Lilás - 800 pontos"
                     checked={at5l}
                     onPress={()=>{marcaTodosLilas()}}
                     checkedColor="#FC03AD"
@@ -594,25 +598,25 @@ export default function Equipe1() {
                 !at5l ? (
                     <View>
                         <CheckBox
-                            title="     • Identificar a vítima - 10 pontos"
+                            title="     • Identificar a vítima - 100 pontos"
                             checked={at51l}
                             onPress={()=>setResgateLilas(1)}
                             checkedColor="#FC03AD"
                         />
                         <CheckBox
-                            title="     • Levar a vítima - 10 pontos"
+                            title="     • Levar a vítima - 100 pontos"
                             checked={at52l}
                             onPress={()=>setResgateLilas(2)}
                             checkedColor="#FC03AD"
                         />
                         <CheckBox
-                            title="     • Deixar a vítima - 10 pontos"
+                            title="     • Deixar a vítima - 100 pontos"
                             checked={at53l}
                             onPress={()=>setResgateLilas(3)}
                             checkedColor="#FC03AD"
                         />
                         <CheckBox
-                            title="     • Retomar a linha - 10 pontos"
+                            title="     • Retomar a linha - 100 pontos"
                             checked={at54l}
                             onPress={()=>setResgateLilas(4)}
                             checkedColor="#FC03AD"
@@ -621,7 +625,7 @@ export default function Equipe1() {
                     ) : null
                 }
                 <CheckBox
-                    title="Finalizar a prova - 50 pontos"
+                    title="Finalizar a prova - 500 pontos"
                     checked={at6}
                     onPress={()=>setarAt6()}
                     checkedColor="#1F7A01"
@@ -629,7 +633,7 @@ export default function Equipe1() {
                     uncheckedIcon='circle-o'
                 />
                 <View style={styles.gaap}>
-                    <Text style={styles.texto}>  Gap - 5 pontos</Text>
+                    <Text style={styles.texto}>  Gap - 50 pontos</Text>
                     <Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text>
                     <Button
                         title="  -  "
@@ -668,7 +672,6 @@ const styles = StyleSheet.create({
     text: {
         fontSize:20,
         color:'black',
-        marginTop:7,
     },
     texto: {
         fontSize:15,

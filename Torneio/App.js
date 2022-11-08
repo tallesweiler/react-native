@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {SafeAreaView,StyleSheet,Text,View,ScrollView,Button} from 'react-native';
+import {SafeAreaView,StyleSheet,Text,View,ScrollView} from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 import Equipe1 from './componentes/Equipe1';
 import Equipe2 from './componentes/Equipe2';
@@ -83,6 +83,6 @@ const styles = StyleSheet.create({
     backgroundColor:'gray',
     borderRadius:10,
     marginHorizontal:5,
-  }
+  },
 });
 

@@ -67,9 +67,7 @@ export default function Equipe1() {
         if (at6) 
             res+=500
         res+=50*gap
-
-        if (res!=0)
-            res+=(14-minutes)*60+(60-seconds)
+        res+=(9-minutes)*60+(60-seconds)
 
         Alert.alert(
             "Resultado", Globais.resultado1 + "\nVoce marcou " + res + " pontos!\n"
@@ -361,8 +359,18 @@ export default function Equipe1() {
     const [minutes,setMinutes]=useState(Globais.minutes1)
     const [customInterval,setCustomInterval]=useState(null);
     const [isPaused,setIsPaused]=useState(true)
+
+    async function espera(tmp) {
+        function tempo(ms) {
+          return new Promise(resolve=>setTimeout(resolve,ms))
+        }
+        await tempo(tmp)
+    }
   
-    function startTimer() {
+    async function startTimer() {
+      limparResultado()
+      await espera(1)
+
       if (customInterval!=null && !isPaused)
         return
       
@@ -403,7 +411,7 @@ export default function Equipe1() {
           Globais.seconds1=0
           return 0
         }
-        if (Globais.minutes1==15) {
+        if (Globais.minutes1==10) {
             stopTimer()
             return 0
         }
@@ -484,8 +492,8 @@ export default function Equipe1() {
                             />
                         }
                         <Button
-                        title="Zerar"
-                        onPress={clear}
+                            title="Zerar"
+                            onPress={clear}
                         />
                     </View>
                 </View>
@@ -513,6 +521,44 @@ export default function Equipe1() {
                     checkedIcon='dot-circle-o'
                     uncheckedIcon='circle-o'
                 />
+                <CheckBox
+                    title="Resgate Lilás - 800 pontos"
+                    checked={at5l}
+                    onPress={()=>{marcaTodosLilas()}}
+                    checkedColor="#FC03AD"
+                    checkedIcon='dot-circle-o'
+                    uncheckedIcon='circle-o'
+                />
+                { 
+                !at5l ? (
+                    <View>
+                        <CheckBox
+                            title="     • Identificar a vítima - 100 pontos"
+                            checked={at51l}
+                            onPress={()=>setResgateLilas(1)}
+                            checkedColor="#FC03AD"
+                        />
+                        <CheckBox
+                            title="     • Levar a vítima - 100 pontos"
+                            checked={at52l}
+                            onPress={()=>setResgateLilas(2)}
+                            checkedColor="#FC03AD"
+                        />
+                        <CheckBox
+                            title="     • Deixar a vítima - 100 pontos"
+                            checked={at53l}
+                            onPress={()=>setResgateLilas(3)}
+                            checkedColor="#FC03AD"
+                        />
+                        <CheckBox
+                            title="     • Retomar a linha - 100 pontos"
+                            checked={at54l}
+                            onPress={()=>setResgateLilas(4)}
+                            checkedColor="#FC03AD"
+                        />
+                    </View>
+                    ) : null
+                }
                 <CheckBox
                     title="Resgate Vermelho - 800 pontos"
                     checked={at5v}
@@ -585,44 +631,6 @@ export default function Equipe1() {
                             checked={at54a}
                             onPress={()=>setResgateAmarelo(4)}
                             checkedColor="#F3EC09"
-                        />
-                    </View>
-                    ) : null
-                }
-                <CheckBox
-                    title="Resgate Lilás - 800 pontos"
-                    checked={at5l}
-                    onPress={()=>{marcaTodosLilas()}}
-                    checkedColor="#FC03AD"
-                    checkedIcon='dot-circle-o'
-                    uncheckedIcon='circle-o'
-                />
-                { 
-                !at5l ? (
-                    <View>
-                        <CheckBox
-                            title="     • Identificar a vítima - 100 pontos"
-                            checked={at51l}
-                            onPress={()=>setResgateLilas(1)}
-                            checkedColor="#FC03AD"
-                        />
-                        <CheckBox
-                            title="     • Levar a vítima - 100 pontos"
-                            checked={at52l}
-                            onPress={()=>setResgateLilas(2)}
-                            checkedColor="#FC03AD"
-                        />
-                        <CheckBox
-                            title="     • Deixar a vítima - 100 pontos"
-                            checked={at53l}
-                            onPress={()=>setResgateLilas(3)}
-                            checkedColor="#FC03AD"
-                        />
-                        <CheckBox
-                            title="     • Retomar a linha - 100 pontos"
-                            checked={at54l}
-                            onPress={()=>setResgateLilas(4)}
-                            checkedColor="#FC03AD"
                         />
                     </View>
                     ) : null
@@ -706,7 +714,7 @@ const styles = StyleSheet.create({
     botaoContainer: {
         width:"50%",
         flexDirection:'row',
-        justifyContent:'space-around',
+        justifyContent:'space-evenly',
         marginTop:10,
     },
 });

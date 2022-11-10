@@ -4,26 +4,26 @@ import { Button, CheckBox } from 'react-native-elements';
 import Globais from './Globais'
 
 export default function Equipe1() {
-    const [at1,setAt1]=useState(Globais.cat1)
-    const [at2,setAt2]=useState(Globais.cat2)
-    const [at3,setAt3]=useState(Globais.cat3)
-    const [at5v,setAt5v]=useState(Globais.cat5v)
-    const [at51v,setAt51v]=useState(Globais.cat51v)
-    const [at52v,setAt52v]=useState(Globais.cat52v)
-    const [at53v,setAt53v]=useState(Globais.cat53v)
-    const [at54v,setAt54v]=useState(Globais.cat54v)
-    const [at5a,setAt5a]=useState(Globais.cat5a)
-    const [at51a,setAt51a]=useState(Globais.cat51a)
-    const [at52a,setAt52a]=useState(Globais.cat52a)
-    const [at53a,setAt53a]=useState(Globais.cat53a)
-    const [at54a,setAt54a]=useState(Globais.cat54a)
-    const [at5l,setAt5l]=useState(Globais.cat5l)
-    const [at51l,setAt51l]=useState(Globais.cat51l)
-    const [at52l,setAt52l]=useState(Globais.cat52l)
-    const [at53l,setAt53l]=useState(Globais.cat53l)
-    const [at54l,setAt54l]=useState(Globais.cat54l)
-    const [at6,setAt6]=useState(Globais.cat6)
-    const [gap,setGap]=useState(Globais.cgap)
+    const [at1,setAt1]=useState(Globais.fat1)
+    const [at2,setAt2]=useState(Globais.fat2)
+    const [at3,setAt3]=useState(Globais.fat3)
+    const [at5v,setAt5v]=useState(Globais.fat5v)
+    const [at51v,setAt51v]=useState(Globais.fat51v)
+    const [at52v,setAt52v]=useState(Globais.fat52v)
+    const [at53v,setAt53v]=useState(Globais.fat53v)
+    const [at54v,setAt54v]=useState(Globais.fat54v)
+    const [at5a,setAt5a]=useState(Globais.fat5a)
+    const [at51a,setAt51a]=useState(Globais.fat51a)
+    const [at52a,setAt52a]=useState(Globais.fat52a)
+    const [at53a,setAt53a]=useState(Globais.fat53a)
+    const [at54a,setAt54a]=useState(Globais.fat54a)
+    const [at5l,setAt5l]=useState(Globais.fat5l)
+    const [at51l,setAt51l]=useState(Globais.fat51l)
+    const [at52l,setAt52l]=useState(Globais.fat52l)
+    const [at53l,setAt53l]=useState(Globais.fat53l)
+    const [at54l,setAt54l]=useState(Globais.fat54l)
+    const [at6,setAt6]=useState(Globais.fat6)
+    const [gap,setGap]=useState(Globais.fgap)
 
     function click() {
         let res=0
@@ -70,14 +70,14 @@ export default function Equipe1() {
         res+=(9-minutes)*60+(60-seconds)
 
         Alert.alert(
-            "Resultado", Globais.resultado3 + "\nVoce marcou " + res + " pontos!\n"
+            "Resultado", Globais.resultado6 + "\nVoce marcou " + res + " pontos!\n"
         )
     }
 
     function setResgateVermelho(num) {
         if (num===1) {
             setAt51v(!at51v)
-            Globais.cat51v=!at51v
+            Globais.fat51v=!at51v
             if (!at51v)
                 marcarTempo('Identificou a vítima (vermelho)')
             if(!at51v && at52v && at53v && at54v)
@@ -87,7 +87,7 @@ export default function Equipe1() {
         } 
         else if (num===2) {
             setAt52v(!at52v)
-            Globais.cat52v=!at52v
+            Globais.fat52v=!at52v
             if (!at52v)
                 marcarTempo('Levou a vítima (vermelho)')
             if(at51v && !at52v && at53v && at54v)
@@ -97,7 +97,7 @@ export default function Equipe1() {
         }
         else if (num===3) {
             setAt53v(!at53v)
-            Globais.cat53v=!at53v
+            Globais.fat53v=!at53v
             if (!at53v)
                 marcarTempo('Deixou a vítima (vermelho)')
             if(at51v && at52v && !at53v && at54v)
@@ -107,7 +107,7 @@ export default function Equipe1() {
         }
         else if (num===4) {
             setAt54v(!at54v)
-            Globais.cat54v=!at54v
+            Globais.fat54v=!at54v
             if (!at54v)
                 marcarTempo('Retomou a linha (vermelho)')
             if(at51v && at52v && at53v && !at54v)
@@ -119,11 +119,11 @@ export default function Equipe1() {
     function todosMarcadosVermelho(aux) {
         if (aux===1) {
             setAt5v(true)
-            Globais.cat5v=true
+            Globais.fat5v=true
         }  
         else {
             setAt5v(false)
-            Globais.cat5v=false
+            Globais.fat5v=false
         }    
     }
     function marcaTodosVermelho() {
@@ -133,11 +133,11 @@ export default function Equipe1() {
             setAt52v(false)
             setAt53v(false)
             setAt54v(false)
-            Globais.cat5v=false
-            Globais.cat51v=false
-            Globais.cat52v=false
-            Globais.cat53v=false
-            Globais.cat54v=false
+            Globais.fat5v=false
+            Globais.fat51v=false
+            Globais.fat52v=false
+            Globais.fat53v=false
+            Globais.fat54v=false
         }
         else {
             setAt5v(true)
@@ -145,11 +145,11 @@ export default function Equipe1() {
             setAt52v(true)
             setAt53v(true)
             setAt54v(true)
-            Globais.cat5v=true
-            Globais.cat51v=true
-            Globais.cat52v=true
-            Globais.cat53v=true
-            Globais.cat54v=true
+            Globais.fat5v=true
+            Globais.fat51v=true
+            Globais.fat52v=true
+            Globais.fat53v=true
+            Globais.fat54v=true
             marcarTempo('Concluiu o resgate (vermelho)')
         }
     }
@@ -157,7 +157,7 @@ export default function Equipe1() {
     function setResgateAmarelo(num) {
         if (num===1) {
             setAt51a(!at51a)
-            Globais.cat51a=!at51a
+            Globais.fat51a=!at51a
             if (!at51a)
                 marcarTempo('Identificou a vítima (amarelo)')
             if(!at51a && at52a && at53a && at54a)
@@ -167,7 +167,7 @@ export default function Equipe1() {
         } 
         else if (num===2) {
             setAt52a(!at52a)
-            Globais.cat52a=!at52a
+            Globais.fat52a=!at52a
             if (!at52a)
                 marcarTempo('Levou a vítima (amarelo)')
             if(at51a && !at52a && at53a && at54a)
@@ -177,7 +177,7 @@ export default function Equipe1() {
         }
         else if (num===3) {
             setAt53a(!at53a)
-            Globais.cat53a=!at53a
+            Globais.fat53a=!at53a
             if (!at53a)
                 marcarTempo('Deixou a vítima (amarelo)')
             if(at51a && at52a && !at53a && at54a)
@@ -187,7 +187,7 @@ export default function Equipe1() {
         }
         else if (num===4) {
             setAt54a(!at54a)
-            Globais.cat54a=!at54a
+            Globais.fat54a=!at54a
             if (!at54a)
                 marcarTempo('Retomou a linha (amarelo)')
             if(at51a && at52a && at53a && !at54a)
@@ -199,11 +199,11 @@ export default function Equipe1() {
     function todosMarcadosAmarelo(aux) {
         if (aux===1) {
             setAt5a(true)
-            Globais.cat5a=true
+            Globais.fat5a=true
         }   
         else {
             setAt5a(false)
-            Globais.cat5a=false
+            Globais.fat5a=false
         }
     }
     function marcaTodosAmarelo() {
@@ -213,11 +213,11 @@ export default function Equipe1() {
             setAt52a(false)
             setAt53a(false)
             setAt54a(false)
-            Globais.cat5a=false
-            Globais.cat51a=false
-            Globais.cat52a=false
-            Globais.cat53a=false
-            Globais.cat54a=false
+            Globais.fat5a=false
+            Globais.fat51a=false
+            Globais.fat52a=false
+            Globais.fat53a=false
+            Globais.fat54a=false
         }
         else {
             setAt5a(true)
@@ -225,11 +225,11 @@ export default function Equipe1() {
             setAt52a(true)
             setAt53a(true)
             setAt54a(true)
-            Globais.cat5a=true
-            Globais.cat51a=true
-            Globais.cat52a=true
-            Globais.cat53a=true
-            Globais.cat54a=true
+            Globais.fat5a=true
+            Globais.fat51a=true
+            Globais.fat52a=true
+            Globais.fat53a=true
+            Globais.fat54a=true
             marcarTempo('Concluiu o resgate (amarelo)')
         }
     }
@@ -237,7 +237,7 @@ export default function Equipe1() {
     function setResgateLilas(num) {
         if (num===1) {
             setAt51l(!at51l)
-            Globais.cat51l=!at51l
+            Globais.fat51l=!at51l
             if (!at51l)
                 marcarTempo('Identificou a vítima (lilás)')
             if(!at51l && at52l && at53l && at54l)
@@ -247,7 +247,7 @@ export default function Equipe1() {
         } 
         else if (num===2) {
             setAt52l(!at52l)
-            Globais.cat52l=!at52l
+            Globais.fat52l=!at52l
             if (!at52l)
                 marcarTempo('Levou a vítima (lilás)')
             if(at51l && !at52l && at53l && at54l)
@@ -257,7 +257,7 @@ export default function Equipe1() {
         }
         else if (num===3) {
             setAt53l(!at53l)
-            Globais.cat53l=!at53l
+            Globais.fat53l=!at53l
             if (!at53l)
                 marcarTempo('Deixou a vítima (lilás)')
             if(at51l && at52l && !at53l && at54l)
@@ -267,7 +267,7 @@ export default function Equipe1() {
         }
         else if (num===4) {
             setAt54l(!at54l)
-            Globais.cat54l=!at54l
+            Globais.fat54l=!at54l
             if (!at54l)
                 marcarTempo('Retomou a linha (lilás)')
             if(at51l && at52l && at53l && !at54l)
@@ -279,11 +279,11 @@ export default function Equipe1() {
     function todosMarcadosLilas(aux) {
         if (aux===1) {
             setAt5l(true)
-            Globais.cat5l=true
+            Globais.fat5l=true
         }   
         else {
             setAt5l(false)
-            Globais.cat5l=false
+            Globais.fat5l=false
         }     
     }
     function marcaTodosLilas() {
@@ -293,11 +293,11 @@ export default function Equipe1() {
             setAt52l(false)
             setAt53l(false)
             setAt54l(false)
-            Globais.cat5l=false
-            Globais.cat51l=false
-            Globais.cat52l=false
-            Globais.cat53l=false
-            Globais.cat54l=false
+            Globais.fat5l=false
+            Globais.fat51l=false
+            Globais.fat52l=false
+            Globais.fat53l=false
+            Globais.fat54l=false
         }
         else {
             setAt5l(true)
@@ -305,57 +305,58 @@ export default function Equipe1() {
             setAt52l(true)
             setAt53l(true)
             setAt54l(true)
-            Globais.cat5l=true
-            Globais.cat51l=true
-            Globais.cat52l=true
-            Globais.cat53l=true
-            Globais.cat54l=true
+            Globais.fat5l=true
+            Globais.fat51l=true
+            Globais.fat52l=true
+            Globais.fat53l=true
+            Globais.fat54l=true
             marcarTempo('Concluiu o resgate (lilás)')
         }
     }
 
     function aumentaGap() {
         setGap(gap+1)
-        Globais.cgap=Globais.cgap+1
+        Globais.fgap=Globais.fgap+1
         marcarTempo('Passou o gap')
     }
     function diminuiGap() {
         if (gap>0) {
             setGap(gap-1)
-            Globais.cgap=Globais.cgap-1
+            Globais.fgap=Globais.fgap-1
         }
             
     }
 
     function setarAt1() {
         setAt1(!at1)
-        Globais.cat1=!at1
+        Globais.fat1=!at1
         if (!at1)
             marcarTempo('Passou o portal')
     }
     function setarAt2() {
         setAt2(!at2)
-        Globais.cat2=!at2
+        Globais.fat2=!at2
         if (!at2)
             marcarTempo('Fez a volta completa')
     }
     function setarAt3() {
         setAt3(!at3)
-        Globais.cat3=!at3
+        Globais.fat3=!at3
         if (!at3)
             marcarTempo('Desviou do obstáculo')
     }
     function setarAt6() {
         setAt6(!at6)
-        Globais.cat6=!at6
+        Globais.fat6=!at6
         if (!at6) {
             marcarTempo('Finalizou a prova')
             stopTimer()
         }
+            
     }
 
-    const [seconds,setSeconds]=useState(Globais.seconds3)
-    const [minutes,setMinutes]=useState(Globais.minutes3)
+    const [seconds,setSeconds]=useState(Globais.seconds6)
+    const [minutes,setMinutes]=useState(Globais.minutes6)
     const [customInterval,setCustomInterval]=useState(null);
     const [isPaused,setIsPaused]=useState(true)
   
@@ -393,9 +394,9 @@ export default function Equipe1() {
     function clear() {
       stopTimer()
       setSeconds(0)
-      Globais.seconds3=0
+      Globais.seconds6=0
       setMinutes(0)
-      Globais.minutes3=0
+      Globais.minutes6=0
       setCustomInterval(null)
       setIsPaused(true)
     }
@@ -404,30 +405,30 @@ export default function Equipe1() {
       setSeconds((prevState)=>{
         if (prevState+1==60) {
           setMinutes((prevState)=>{
-            Globais.minutes3+=1
+            Globais.minutes6+=1
             return prevState+1
           })
-          Globais.seconds3=0
+          Globais.seconds6=0
           return 0
         }
-        if (Globais.minutes3==10) {
+        if (Globais.minutes6==10) {
             stopTimer()
             return 0
         }
-        Globais.seconds3+=1
+        Globais.seconds6+=1
         return prevState+1
       })
     }
 
     function marcarTempo(atv) {
         if (minutes<10 && seconds>9)
-            Globais.resultado3+=atv+' aos 0'+minutes+':'+seconds+'\n'
+            Globais.resultado6+=atv+' aos 0'+minutes+':'+seconds+'\n'
         else if (minutes>9 && seconds<10)
-            Globais.resultado3+=atv+' aos '+minutes+':0'+seconds+'\n'
+            Globais.resultado6+=atv+' aos '+minutes+':0'+seconds+'\n'
         else
-            Globais.resultado3+=atv+' aos 0'+minutes+':0'+seconds+'\n'
-    }
-    
+            Globais.resultado6+=atv+' aos 0'+minutes+':0'+seconds+'\n'
+    }    
+
     function limparResultado() {
         setAt1()
         setAt2()
@@ -449,28 +450,28 @@ export default function Equipe1() {
         setAt54l()
         setAt5l()
         setGap(0)
-        Globais.cat1=
-        Globais.cat2=
-        Globais.cat3=
-        Globais.cat6=
-        Globais.cat51v=
-        Globais.cat52v=
-        Globais.cat53v=
-        Globais.cat54v=
-        Globais.cat5v=
-        Globais.cat51a=
-        Globais.cat52a=
-        Globais.cat53a=
-        Globais.cat54a=
-        Globais.cat5a=
-        Globais.cat51l=
-        Globais.cat52l=
-        Globais.cat53l=
-        Globais.cat54l=
-        Globais.cat5l=
-        Globais.cgap=0
+        Globais.fat1=
+        Globais.fat2=
+        Globais.fat3=
+        Globais.fat6=
+        Globais.fat51v=
+        Globais.fat52v=
+        Globais.fat53v=
+        Globais.fat54v=
+        Globais.fat5v=
+        Globais.fat51a=
+        Globais.fat52a=
+        Globais.fat53a=
+        Globais.fat54a=
+        Globais.fat5a=
+        Globais.fat51l=
+        Globais.fat52l=
+        Globais.fat53l=
+        Globais.fat54l=
+        Globais.fat5l=
+        Globais.fgap=0
         clear()
-        Globais.resultado3=''
+        Globais.resultado6=''
     }
 
     return(

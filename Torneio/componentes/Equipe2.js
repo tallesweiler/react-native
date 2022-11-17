@@ -24,6 +24,7 @@ export default function Equipe1() {
     const [at54l,setAt54l]=useState(Globais.bat54l)
     const [at6,setAt6]=useState(Globais.bat6)
     const [gap,setGap]=useState(Globais.bgap)
+    const [teste,setTeste]=useState(Globais.teste2)
 
     function click() {
         let res=0
@@ -350,7 +351,6 @@ export default function Equipe1() {
         Globais.bat6=!at6
         if (!at6) {
             marcarTempo('Finalizou a prova')
-            stopTimer()
         }
     }
 
@@ -367,7 +367,7 @@ export default function Equipe1() {
     }
   
     async function startTimer() {
-      limparResultado()
+      consertaStart()
       await espera(1)
 
       if (customInterval!=null && !isPaused)
@@ -391,7 +391,10 @@ export default function Equipe1() {
     }
   
     function clear() {
-      stopTimer()
+      if (customInterval) {
+        setIsPaused(true)
+        clearInterval(customInterval)
+      }
       setSeconds(0)
       Globais.seconds2=0
       setMinutes(0)
@@ -469,8 +472,12 @@ export default function Equipe1() {
         Globais.bat54l=
         Globais.bat5l=
         Globais.bgap=0
-        clear()
         Globais.resultado2=''
+        clear()
+    }
+
+    function consertaStart() {
+        setTeste()
     }
 
     return(
@@ -516,6 +523,14 @@ export default function Equipe1() {
                     title="Desvio do obstáculo - 300 pontos"
                     checked={at3}
                     onPress={()=>setarAt3()}
+                    checkedColor="#1F7A01"
+                    checkedIcon='dot-circle-o'
+                    uncheckedIcon='circle-o'
+                />
+                <CheckBox
+                    title="Finalizar a prova - 500 pontos"
+                    checked={at6}
+                    onPress={()=>setarAt6()}
                     checkedColor="#1F7A01"
                     checkedIcon='dot-circle-o'
                     uncheckedIcon='circle-o'
@@ -634,14 +649,6 @@ export default function Equipe1() {
                     </View>
                     ) : null
                 }
-                <CheckBox
-                    title="Finalizar a prova - 500 pontos"
-                    checked={at6}
-                    onPress={()=>setarAt6()}
-                    checkedColor="#1F7A01"
-                    checkedIcon='dot-circle-o'
-                    uncheckedIcon='circle-o'
-                />
                 <View style={styles.gaap}>
                     <Text style={styles.texto}>  Gap - 50 pontos</Text>
                     <Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text>

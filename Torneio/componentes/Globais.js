@@ -240,6 +240,17 @@ class Globais {
     static resultado8=''
     static resultado9=''
     static resultado10=''
+
+    static teste1=false
+    static teste2=false
+    static teste3=false
+    static teste4=false
+    static teste5=false
+    static teste6=false
+    static teste7=false
+    static teste8=false
+    static teste9=false
+    static teste10=false
 }
 
 export default Globais

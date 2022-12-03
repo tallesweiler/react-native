@@ -6,14 +6,9 @@ import Equipe2 from './componentes/Equipe2';
 import Equipe3 from './componentes/Equipe3';
 import Equipe4 from './componentes/Equipe4';
 import Equipe5 from './componentes/Equipe5';
-import Equipe6 from './componentes/Equipe6';
-import Equipe7 from './componentes/Equipe7';
-import Equipe8 from './componentes/Equipe8';
-import Equipe9 from './componentes/Equipe9';
-import Equipe10 from './componentes/Equipe10';
 
 export default function torneio() {
-  const [opcao]=useState(['-','Equipe 1','Equipe 2','Equipe 3','Equipe 4','Equipe 5','Equipe 6','Equipe 7','Equipe 8','Equipe 9','Equipe 10'])
+  const [opcao]=useState(['-','Equipe 1','Equipe 2','Equipe 3','Equipe 4','Equipe 5'])
   const [selectedValue,setSelectedValue]=useState([])
 
   return(
@@ -49,16 +44,6 @@ export default function torneio() {
               <Equipe4/>
             ) : (selectedValue=='Equipe 5') ? (
               <Equipe5/>
-            ) : (selectedValue=='Equipe 6') ? (
-              <Equipe6/>
-            ) : (selectedValue=='Equipe 7') ? (
-              <Equipe7/>
-            ) : (selectedValue=='Equipe 8') ? (
-              <Equipe8/>
-            ) : (selectedValue=='Equipe 9') ? (
-              <Equipe9/>
-            ) : (selectedValue=='Equipe 10') ? (
-              <Equipe10/>
             ) : null)
           }  
         </View>

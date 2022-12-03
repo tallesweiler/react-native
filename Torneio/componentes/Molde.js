@@ -4,27 +4,27 @@ import { Button, CheckBox } from 'react-native-elements';
 import Globais from './Globais'
 
 export default function Equipe1() {
-    const [at1,setAt1]=useState(Globais.hat1)
-    const [at2,setAt2]=useState(Globais.hat2)
-    const [at3,setAt3]=useState(Globais.hat3)
-    const [at5v,setAt5v]=useState(Globais.hat5v)
-    const [at51v,setAt51v]=useState(Globais.hat51v)
-    const [at52v,setAt52v]=useState(Globais.hat52v)
-    const [at53v,setAt53v]=useState(Globais.hat53v)
-    const [at54v,setAt54v]=useState(Globais.hat54v)
-    const [at5a,setAt5a]=useState(Globais.hat5a)
-    const [at51a,setAt51a]=useState(Globais.hat51a)
-    const [at52a,setAt52a]=useState(Globais.hat52a)
-    const [at53a,setAt53a]=useState(Globais.hat53a)
-    const [at54a,setAt54a]=useState(Globais.hat54a)
-    const [at5l,setAt5l]=useState(Globais.hat5l)
-    const [at51l,setAt51l]=useState(Globais.hat51l)
-    const [at52l,setAt52l]=useState(Globais.hat52l)
-    const [at53l,setAt53l]=useState(Globais.hat53l)
-    const [at54l,setAt54l]=useState(Globais.hat54l)
-    const [at6,setAt6]=useState(Globais.hat6)
-    const [gap,setGap]=useState(Globais.hgap)
-    const [teste,setTeste]=useState(Globais.teste8)
+    const [at1,setAt1]=useState(Globais.@at1)
+    const [at2,setAt2]=useState(Globais.@at2)
+    const [at3,setAt3]=useState(Globais.@at3)
+    const [at5v,setAt5v]=useState(Globais.@at5v)
+    const [at51v,setAt51v]=useState(Globais.@at51v)
+    const [at52v,setAt52v]=useState(Globais.@at52v)
+    const [at53v,setAt53v]=useState(Globais.@at53v)
+    const [at54v,setAt54v]=useState(Globais.@at54v)
+    const [at5a,setAt5a]=useState(Globais.@at5a)
+    const [at51a,setAt51a]=useState(Globais.@at51a)
+    const [at52a,setAt52a]=useState(Globais.@at52a)
+    const [at53a,setAt53a]=useState(Globais.@at53a)
+    const [at54a,setAt54a]=useState(Globais.@at54a)
+    const [at5l,setAt5l]=useState(Globais.@at5l)
+    const [at51l,setAt51l]=useState(Globais.@at51l)
+    const [at52l,setAt52l]=useState(Globais.@at52l)
+    const [at53l,setAt53l]=useState(Globais.@at53l)
+    const [at54l,setAt54l]=useState(Globais.@at54l)
+    const [at6,setAt6]=useState(Globais.@at6)
+    const [gap,setGap]=useState(Globais.@gap)
+    const [teste,setTeste]=useState(Globais.teste$)
 
     function click() {
         let res=0
@@ -68,17 +68,17 @@ export default function Equipe1() {
         if (at6) 
             res+=500
         res+=50*gap
-        res+=(9-minutes)*60+(60-seconds)
+        res+=(14-minutes)*60+(60-seconds)
 
         Alert.alert(
-            "Resultado", Globais.resultado8 + "\nVoce marcou " + res + " pontos!\n"
+            "Resultado", Globais.resultado$ + "\nVoce marcou " + res + " pontos!\n"
         )
     }
 
     function setResgateVermelho(num) {
         if (num===1) {
             setAt51v(!at51v)
-            Globais.hat51v=!at51v
+            Globais.@at51v=!at51v
             if (!at51v)
                 marcarTempo('Identificou a vítima (vermelho)')
             if(!at51v && at52v && at53v && at54v)
@@ -88,7 +88,7 @@ export default function Equipe1() {
         } 
         else if (num===2) {
             setAt52v(!at52v)
-            Globais.hat52v=!at52v
+            Globais.@at52v=!at52v
             if (!at52v)
                 marcarTempo('Levou a vítima (vermelho)')
             if(at51v && !at52v && at53v && at54v)
@@ -98,7 +98,7 @@ export default function Equipe1() {
         }
         else if (num===3) {
             setAt53v(!at53v)
-            Globais.hat53v=!at53v
+            Globais.@at53v=!at53v
             if (!at53v)
                 marcarTempo('Deixou a vítima (vermelho)')
             if(at51v && at52v && !at53v && at54v)
@@ -108,7 +108,7 @@ export default function Equipe1() {
         }
         else if (num===4) {
             setAt54v(!at54v)
-            Globais.hat54v=!at54v
+            Globais.@at54v=!at54v
             if (!at54v)
                 marcarTempo('Retomou a linha (vermelho)')
             if(at51v && at52v && at53v && !at54v)
@@ -120,11 +120,11 @@ export default function Equipe1() {
     function todosMarcadosVermelho(aux) {
         if (aux===1) {
             setAt5v(true)
-            Globais.hat5v=true
+            Globais.@at5v=true
         }  
         else {
             setAt5v(false)
-            Globais.hat5v=false
+            Globais.@at5v=false
         }    
     }
     function marcaTodosVermelho() {
@@ -134,11 +134,11 @@ export default function Equipe1() {
             setAt52v(false)
             setAt53v(false)
             setAt54v(false)
-            Globais.hat5v=false
-            Globais.hat51v=false
-            Globais.hat52v=false
-            Globais.hat53v=false
-            Globais.hat54v=false
+            Globais.@at5v=false
+            Globais.@at51v=false
+            Globais.@at52v=false
+            Globais.@at53v=false
+            Globais.@at54v=false
         }
         else {
             setAt5v(true)
@@ -146,11 +146,11 @@ export default function Equipe1() {
             setAt52v(true)
             setAt53v(true)
             setAt54v(true)
-            Globais.hat5v=true
-            Globais.hat51v=true
-            Globais.hat52v=true
-            Globais.hat53v=true
-            Globais.hat54v=true
+            Globais.@at5v=true
+            Globais.@at51v=true
+            Globais.@at52v=true
+            Globais.@at53v=true
+            Globais.@at54v=true
             marcarTempo('Concluiu o resgate (vermelho)')
         }
     }
@@ -158,7 +158,7 @@ export default function Equipe1() {
     function setResgateAmarelo(num) {
         if (num===1) {
             setAt51a(!at51a)
-            Globais.hat51a=!at51a
+            Globais.@at51a=!at51a
             if (!at51a)
                 marcarTempo('Identificou a vítima (amarelo)')
             if(!at51a && at52a && at53a && at54a)
@@ -168,7 +168,7 @@ export default function Equipe1() {
         } 
         else if (num===2) {
             setAt52a(!at52a)
-            Globais.hat52a=!at52a
+            Globais.@at52a=!at52a
             if (!at52a)
                 marcarTempo('Levou a vítima (amarelo)')
             if(at51a && !at52a && at53a && at54a)
@@ -178,7 +178,7 @@ export default function Equipe1() {
         }
         else if (num===3) {
             setAt53a(!at53a)
-            Globais.hat53a=!at53a
+            Globais.@at53a=!at53a
             if (!at53a)
                 marcarTempo('Deixou a vítima (amarelo)')
             if(at51a && at52a && !at53a && at54a)
@@ -188,7 +188,7 @@ export default function Equipe1() {
         }
         else if (num===4) {
             setAt54a(!at54a)
-            Globais.hat54a=!at54a
+            Globais.@at54a=!at54a
             if (!at54a)
                 marcarTempo('Retomou a linha (amarelo)')
             if(at51a && at52a && at53a && !at54a)
@@ -200,11 +200,11 @@ export default function Equipe1() {
     function todosMarcadosAmarelo(aux) {
         if (aux===1) {
             setAt5a(true)
-            Globais.hat5a=true
+            Globais.@at5a=true
         }   
         else {
             setAt5a(false)
-            Globais.hat5a=false
+            Globais.@at5a=false
         }
     }
     function marcaTodosAmarelo() {
@@ -214,11 +214,11 @@ export default function Equipe1() {
             setAt52a(false)
             setAt53a(false)
             setAt54a(false)
-            Globais.hat5a=false
-            Globais.hat51a=false
-            Globais.hat52a=false
-            Globais.hat53a=false
-            Globais.hat54a=false
+            Globais.@at5a=false
+            Globais.@at51a=false
+            Globais.@at52a=false
+            Globais.@at53a=false
+            Globais.@at54a=false
         }
         else {
             setAt5a(true)
@@ -226,11 +226,11 @@ export default function Equipe1() {
             setAt52a(true)
             setAt53a(true)
             setAt54a(true)
-            Globais.hat5a=true
-            Globais.hat51a=true
-            Globais.hat52a=true
-            Globais.hat53a=true
-            Globais.hat54a=true
+            Globais.@at5a=true
+            Globais.@at51a=true
+            Globais.@at52a=true
+            Globais.@at53a=true
+            Globais.@at54a=true
             marcarTempo('Concluiu o resgate (amarelo)')
         }
     }
@@ -238,7 +238,7 @@ export default function Equipe1() {
     function setResgateLilas(num) {
         if (num===1) {
             setAt51l(!at51l)
-            Globais.hat51l=!at51l
+            Globais.@at51l=!at51l
             if (!at51l)
                 marcarTempo('Identificou a vítima (lilás)')
             if(!at51l && at52l && at53l && at54l)
@@ -248,7 +248,7 @@ export default function Equipe1() {
         } 
         else if (num===2) {
             setAt52l(!at52l)
-            Globais.hat52l=!at52l
+            Globais.@at52l=!at52l
             if (!at52l)
                 marcarTempo('Levou a vítima (lilás)')
             if(at51l && !at52l && at53l && at54l)
@@ -258,7 +258,7 @@ export default function Equipe1() {
         }
         else if (num===3) {
             setAt53l(!at53l)
-            Globais.hat53l=!at53l
+            Globais.@at53l=!at53l
             if (!at53l)
                 marcarTempo('Deixou a vítima (lilás)')
             if(at51l && at52l && !at53l && at54l)
@@ -268,7 +268,7 @@ export default function Equipe1() {
         }
         else if (num===4) {
             setAt54l(!at54l)
-            Globais.hat54l=!at54l
+            Globais.@at54l=!at54l
             if (!at54l)
                 marcarTempo('Retomou a linha (lilás)')
             if(at51l && at52l && at53l && !at54l)
@@ -280,11 +280,11 @@ export default function Equipe1() {
     function todosMarcadosLilas(aux) {
         if (aux===1) {
             setAt5l(true)
-            Globais.hat5l=true
+            Globais.@at5l=true
         }   
         else {
             setAt5l(false)
-            Globais.hat5l=false
+            Globais.@at5l=false
         }     
     }
     function marcaTodosLilas() {
@@ -294,11 +294,11 @@ export default function Equipe1() {
             setAt52l(false)
             setAt53l(false)
             setAt54l(false)
-            Globais.hat5l=false
-            Globais.hat51l=false
-            Globais.hat52l=false
-            Globais.hat53l=false
-            Globais.hat54l=false
+            Globais.@at5l=false
+            Globais.@at51l=false
+            Globais.@at52l=false
+            Globais.@at53l=false
+            Globais.@at54l=false
         }
         else {
             setAt5l(true)
@@ -306,60 +306,60 @@ export default function Equipe1() {
             setAt52l(true)
             setAt53l(true)
             setAt54l(true)
-            Globais.hat5l=true
-            Globais.hat51l=true
-            Globais.hat52l=true
-            Globais.hat53l=true
-            Globais.hat54l=true
+            Globais.@at5l=true
+            Globais.@at51l=true
+            Globais.@at52l=true
+            Globais.@at53l=true
+            Globais.@at54l=true
             marcarTempo('Concluiu o resgate (lilás)')
         }
     }
 
     function aumentaGap() {
         setGap(gap+1)
-        Globais.hgap=Globais.hgap+1
+        Globais.@gap=Globais.@gap+1
         marcarTempo('Passou o gap')
     }
     function diminuiGap() {
         if (gap>0) {
             setGap(gap-1)
-            Globais.hgap=Globais.hgap-1
+            Globais.@gap=Globais.@gap-1
         }
             
     }
 
     function setarAt1() {
         setAt1(!at1)
-        Globais.hat1=!at1
+        Globais.@at1=!at1
         if (!at1)
             marcarTempo('Passou o portal')
     }
     function setarAt2() {
         setAt2(!at2)
-        Globais.hat2=!at2
+        Globais.@at2=!at2
         if (!at2)
             marcarTempo('Fez a volta completa')
     }
     function setarAt3() {
         setAt3(!at3)
-        Globais.hat3=!at3
+        Globais.@at3=!at3
         if (!at3)
             marcarTempo('Desviou do obstáculo')
     }
     function setarAt6() {
         setAt6(!at6)
-        Globais.hat6=!at6
+        Globais.@at6=!at6
         if (!at6) {
             marcarTempo('Finalizou a prova')
         }
             
     }
 
-    const [seconds,setSeconds]=useState(Globais.seconds8)
-    const [minutes,setMinutes]=useState(Globais.minutes8)
+    const [seconds,setSeconds]=useState(Globais.seconds$)
+    const [minutes,setMinutes]=useState(Globais.minutes$)
     const [customInterval,setCustomInterval]=useState(null);
     const [isPaused,setIsPaused]=useState(true)
-  
+
     async function espera(tmp) {
         function tempo(ms) {
           return new Promise(resolve=>setTimeout(resolve,ms))
@@ -388,7 +388,7 @@ export default function Equipe1() {
         setIsPaused(true)
         clearInterval(customInterval)
       }
-      marcarTempo('Terminou a prova')
+      marcarTempo('Parou a prova')
     }
   
     function clear() {
@@ -397,9 +397,9 @@ export default function Equipe1() {
         clearInterval(customInterval)
       }
       setSeconds(0)
-      Globais.seconds8=0
+      Globais.seconds$=0
       setMinutes(0)
-      Globais.minutes8=0
+      Globais.minutes$=0
       setCustomInterval(null)
       setIsPaused(true)
     }
@@ -408,28 +408,28 @@ export default function Equipe1() {
       setSeconds((prevState)=>{
         if (prevState+1==60) {
           setMinutes((prevState)=>{
-            Globais.minutes8+=1
+            Globais.minutes$+=1
             return prevState+1
           })
-          Globais.seconds8=0
+          Globais.seconds$=0
           return 0
         }
-        if (Globais.minutes8==10) {
+        if (Globais.minutes$==15) {
             stopTimer()
             return 0
         }
-        Globais.seconds8+=1
+        Globais.seconds$+=1
         return prevState+1
       })
     }
 
     function marcarTempo(atv) {
         if (minutes<10 && seconds>9)
-            Globais.resultado8+=atv+' aos 0'+minutes+':'+seconds+'\n'
+            Globais.resultado$+=atv+' aos 0'+minutes+':'+seconds+'\n'
         else if (minutes>9 && seconds<10)
-            Globais.resultado8+=atv+' aos '+minutes+':0'+seconds+'\n'
+            Globais.resultado$+=atv+' aos '+minutes+':0'+seconds+'\n'
         else
-            Globais.resultado8+=atv+' aos 0'+minutes+':0'+seconds+'\n'
+            Globais.resultado$+=atv+' aos 0'+minutes+':0'+seconds+'\n'
     }    
 
     function limparResultado() {
@@ -453,27 +453,27 @@ export default function Equipe1() {
         setAt54l()
         setAt5l()
         setGap(0)
-        Globais.hat1=
-        Globais.hat2=
-        Globais.hat3=
-        Globais.hat6=
-        Globais.hat51v=
-        Globais.hat52v=
-        Globais.hat53v=
-        Globais.hat54v=
-        Globais.hat5v=
-        Globais.hat51a=
-        Globais.hat52a=
-        Globais.hat53a=
-        Globais.hat54a=
-        Globais.hat5a=
-        Globais.hat51l=
-        Globais.hat52l=
-        Globais.hat53l=
-        Globais.hat54l=
-        Globais.hat5l=
-        Globais.hgap=0
-        Globais.resultado8=''
+        Globais.@at1=
+        Globais.@at2=
+        Globais.@at3=
+        Globais.@at6=
+        Globais.@at51v=
+        Globais.@at52v=
+        Globais.@at53v=
+        Globais.@at54v=
+        Globais.@at5v=
+        Globais.@at51a=
+        Globais.@at52a=
+        Globais.@at53a=
+        Globais.@at54a=
+        Globais.@at5a=
+        Globais.@at51l=
+        Globais.@at52l=
+        Globais.@at53l=
+        Globais.@at54l=
+        Globais.@at5l=
+        Globais.@gap=0
+        Globais.resultado$=''
         clear()
     }
 
@@ -499,8 +499,8 @@ export default function Equipe1() {
                             />
                         }
                         <Button
-                        title="Zerar"
-                        onPress={clear}
+                            title="Zerar"
+                            onPress={clear}
                         />
                     </View>
                 </View>
@@ -721,7 +721,7 @@ const styles = StyleSheet.create({
     botaoContainer: {
         width:"50%",
         flexDirection:'row',
-        justifyContent:'space-around',
+        justifyContent:'space-evenly',
         marginTop:10,
     },
 });

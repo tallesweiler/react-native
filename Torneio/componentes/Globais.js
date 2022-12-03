@@ -19,6 +19,10 @@ class Globais {
     static aat54l=false
     static aat6=false
     static agap=0
+    static seconds1=0
+    static minutes1=0
+    static resultado1=''
+    static teste1=false
 
     static bat1=false
     static bat2=false
@@ -40,6 +44,10 @@ class Globais {
     static bat54l=false
     static bat6=false
     static bgap=0
+    static seconds2=0
+    static minutes2=0
+    static resultado2=''
+    static teste2=false
 
     static cat1=false
     static cat2=false
@@ -61,6 +69,10 @@ class Globais {
     static cat54l=false
     static cat6=false
     static cgap=0
+    static seconds3=0
+    static minutes3=0
+    static resultado3=''
+    static teste3=false
 
     static dat1=false
     static dat2=false
@@ -82,6 +94,10 @@ class Globais {
     static dat54l=false
     static dat6=false
     static dgap=0
+    static seconds4=0
+    static minutes4=0
+    static resultado4=''
+    static teste4=false
 
     static eat1=false
     static eat2=false
@@ -103,154 +119,10 @@ class Globais {
     static eat54l=false
     static eat6=false
     static egap=0
-
-    static fat1=false
-    static fat2=false
-    static fat3=false
-    static fat5v=false
-    static fat51v=false
-    static fat52v=false
-    static fat53v=false
-    static fat54v=false
-    static fat5a=false
-    static fat51a=false
-    static fat52a=false
-    static fat53a=false
-    static fat54a=false
-    static fat5l=false
-    static fat51l=false
-    static fat52l=false
-    static fat53l=false
-    static fat54l=false
-    static fat6=false
-    static fgap=0
-
-    static gat1=false
-    static gat2=false
-    static gat3=false
-    static gat5v=false
-    static gat51v=false
-    static gat52v=false
-    static gat53v=false
-    static gat54v=false
-    static gat5a=false
-    static gat51a=false
-    static gat52a=false
-    static gat53a=false
-    static gat54a=false
-    static gat5l=false
-    static gat51l=false
-    static gat52l=false
-    static gat53l=false
-    static gat54l=false
-    static gat6=false
-    static ggap=0
-
-    static hat1=false
-    static hat2=false
-    static hat3=false
-    static hat5v=false
-    static hat51v=false
-    static hat52v=false
-    static hat53v=false
-    static hat54v=false
-    static hat5a=false
-    static hat51a=false
-    static hat52a=false
-    static hat53a=false
-    static hat54a=false
-    static hat5l=false
-    static hat51l=false
-    static hat52l=false
-    static hat53l=false
-    static hat54l=false
-    static hat6=false
-    static hgap=0
-
-    static iat1=false
-    static iat2=false
-    static iat3=false
-    static iat5v=false
-    static iat51v=false
-    static iat52v=false
-    static iat53v=false
-    static iat54v=false
-    static iat5a=false
-    static iat51a=false
-    static iat52a=false
-    static iat53a=false
-    static iat54a=false
-    static iat5l=false
-    static iat51l=false
-    static iat52l=false
-    static iat53l=false
-    static iat54l=false
-    static iat6=false
-    static igap=0
-
-    static jat1=false
-    static jat2=false
-    static jat3=false
-    static jat5v=false
-    static jat51v=false
-    static jat52v=false
-    static jat53v=false
-    static jat54v=false
-    static jat5a=false
-    static jat51a=false
-    static jat52a=false
-    static jat53a=false
-    static jat54a=false
-    static jat5l=false
-    static jat51l=false
-    static jat52l=false
-    static jat53l=false
-    static jat54l=false
-    static jat6=false
-    static jgap=0
-
-    static seconds1=0
-    static minutes1=0
-    static seconds2=0
-    static minutes2=0
-    static seconds3=0
-    static minutes3=0
-    static seconds4=0
-    static minutes4=0
     static seconds5=0
     static minutes5=0
-    static seconds6=0
-    static minutes6=0
-    static seconds7=0
-    static minutes7=0
-    static seconds8=0
-    static minutes8=0
-    static seconds9=0
-    static minutes9=0
-    static seconds10=0
-    static minutes10=0
-
-    static resultado1=''
-    static resultado2=''
-    static resultado3=''
-    static resultado4=''
     static resultado5=''
-    static resultado6=''
-    static resultado7=''
-    static resultado8=''
-    static resultado9=''
-    static resultado10=''
-
-    static teste1=false
-    static teste2=false
-    static teste3=false
-    static teste4=false
-    static teste5=false
-    static teste6=false
-    static teste7=false
-    static teste8=false
-    static teste9=false
-    static teste10=false
+    static teste5=false   
 }
 
 export default Globais

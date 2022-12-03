@@ -68,7 +68,7 @@ export default function Equipe1() {
         if (at6) 
             res+=500
         res+=50*gap
-        res+=(9-minutes)*60+(60-seconds)
+        res+=(14-minutes)*60+(60-seconds)
 
         Alert.alert(
             "Resultado", Globais.resultado5 + "\nVoce marcou " + res + " pontos!\n"
@@ -413,7 +413,7 @@ export default function Equipe1() {
           Globais.seconds5=0
           return 0
         }
-        if (Globais.minutes5==10) {
+        if (Globais.minutes5==15) {
             stopTimer()
             return 0
         }
